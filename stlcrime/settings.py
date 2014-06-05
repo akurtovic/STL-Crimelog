@@ -13,6 +13,14 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 
+TEMPLATE_PATH = os.path.join(BASE_DIR, 'templates/')
+TEMPLATE_DIRS = (
+    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
+    # Always use forward slashes, even on Windows.
+    # Don't forget to use absolute paths, not relative paths.
+    TEMPLATE_PATH,
+)
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
@@ -21,8 +29,6 @@ SECRET_KEY = 'o+c518i54mb8l^gmu3)$%mm-%2!=@@3&my7go#-75i-^d6u#m5'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
-TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 

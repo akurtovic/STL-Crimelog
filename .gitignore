@@ -7,3 +7,6 @@ stlcrime/wsgi.pyc
 stlcrime/urls.pyc
 storylist/admin.pyc
 storylist/models.pyc
+stlcrime.sublime-project
+stlcrime.sublime-workspace
+storylist/views.pyc

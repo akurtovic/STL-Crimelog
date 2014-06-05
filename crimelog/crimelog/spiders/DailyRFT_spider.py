@@ -1,6 +1,7 @@
 from scrapy.spider import Spider
 from scrapy.selector import Selector
 from crimelog.items import Story
+from datetime import datetime
 
 import sys
 
@@ -19,4 +20,6 @@ class DailyRFT(Spider):
             item = Story()
             item['headline'] = sel.xpath('//h2[@class="entryHeadline"]/a/text()').extract()[story]
             item['url'] = sel.xpath('//h2[@class="entryHeadline"]/a/@href').extract()[story]
+            item['source'] = "Riverfront Times"
+            item['added'] = datetime.now()
             item.save()

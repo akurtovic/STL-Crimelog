@@ -1,6 +1,7 @@
 from scrapy.spider import Spider
 from scrapy.selector import Selector
 from crimelog.items import Story
+from datetime import datetime
 
 import sys
 sys.dont_write_bytecode = True
@@ -19,4 +20,6 @@ class PD(Spider):
             item = Story()
             item['headline'] = sel.xpath('//ul[@class="bull-list"]/li/a/text()').extract()[story]
             item['url'] = "http://www.stltoday.com" + sel.xpath('//ul[@class="bull-list"]/li/a//@href').extract()[story]
+            item['source'] = "Post-Dispatch"
+            item['added'] = datetime.now()
             item.save()

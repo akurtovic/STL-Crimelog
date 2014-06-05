@@ -1,7 +1,7 @@
 from scrapy.spider import Spider
 from scrapy.selector import Selector
-
 from crimelog.items import Story
+from datetime import datetime
 
 import sys
 sys.dont_write_bytecode = True
@@ -19,4 +19,6 @@ class KMOX(Spider):
             item = Story()
             item['headline'] = sel.xpath('//div[@class="feature "]/div/h4/a/text()').extract()[story]
             item['url'] = sel.xpath('//div[@class="feature "]/div/h4/a/@href').extract()[story]
+            item['source'] = "KMOX"
+            item['added'] = datetime.now()
             item.save()
