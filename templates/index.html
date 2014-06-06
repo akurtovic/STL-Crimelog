@@ -6,7 +6,18 @@
     </head>
 
     <body>
-        <h1>Test</h1>
+		{% if story_list %}
+		    <ul>
+		    {% for story in story_list %}
+		        <li>
+		        	<span>{{ story.source }}</span>
+		            <a href="{{ story.url }}/">{{ story.headline }}</a>
+		            <span>Added on: {{ story.added}}</span>
+		        </li>
+		    {% endfor %}
+		    </ul>
+		{% else %}
+		    <p>No post is made during the past two days.</p>
+		{% endif %}
     </body>
-
 </html>

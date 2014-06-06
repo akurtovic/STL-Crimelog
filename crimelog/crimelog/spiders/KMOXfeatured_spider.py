@@ -21,4 +21,5 @@ class KMOXfeatured(Spider):
             item['url'] = sel.xpath('//ul[@class="slides"]/li/a[@class="node"]/@href').extract()[story]
             item['source'] = "KMOX"
             item['added'] = datetime.now()
+
             item.save()
