@@ -6,18 +6,19 @@
     </head>
 
     <body>
+    	<h1>St. Louis Crimelog</h1>
 		{% if story_list %}
 		    <ul>
 		    {% for story in story_list %}
 		        <li>
-		        	<span>{{ story.source }}</span>
+		            <span>{{ story.source }}</span>
 		            <a href="{{ story.url }}/">{{ story.headline }}</a>
 		            <span>Added on: {{ story.added}}</span>
 		        </li>
 		    {% endfor %}
 		    </ul>
 		{% else %}
-		    <p>No post is made during the past two days.</p>
+		    <p>No stories loaded.</p>
 		{% endif %}
     </body>
 </html>
