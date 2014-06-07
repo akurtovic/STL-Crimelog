@@ -2,6 +2,7 @@ from scrapy.spider import Spider
 from scrapy.selector import Selector
 from crimelog.items import Story
 from datetime import datetime
+from crimelog.helpers import dupCheck
 
 import sys
 

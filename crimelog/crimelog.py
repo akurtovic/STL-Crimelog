@@ -2,6 +2,23 @@ from twisted.internet import reactor
 from scrapy.crawler import Crawler
 from scrapy.utils.project import get_project_settings
 from scrapy import log
+from crimelog.helpers import dupCheck
+
+
+class Countdown(object):
+    '''
+    Timer for Reactor. Shuts down reactor.run() after 10 seconds
+    '''
+    counter = 10
+ 
+    def count(self):
+        if self.counter == 0:
+            reactor.stop()
+        else:
+            print self.counter, '...'
+            self.counter -= 1
+            reactor.callLater(1, self.count)
+ 
 
 def setup_crawler(spider_name):
     crawler = Crawler(settings)
@@ -10,10 +27,6 @@ def setup_crawler(spider_name):
     crawler.crawl(spider)
     crawler.start()
 
-def time_crawled():
-    '''
-    Return time when crawler ran
-    '''
 
 if __name__ == "__main__": 
     log.start()
@@ -24,6 +37,11 @@ if __name__ == "__main__":
     for spider_name in crawler.spiders.list():
         setup_crawler(spider_name)
 
+    # set up Countdown callback to kill reactor after 10 seconds
+    reactor.callWhenRunning(Countdown().count)
+
+    # run reactor
     reactor.run()
-    reactor.stop()
-    crawler.stop()
+
+    # Delete duplticate database entries, from helpers.py
+    dupCheck()
