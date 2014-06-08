@@ -27,10 +27,6 @@ def setup_crawler(spider_name):
     crawler.crawl(spider)
     crawler.start()
 
-<<<<<<< HEAD
-
-=======
->>>>>>> FETCH_HEAD
 if __name__ == "__main__": 
     log.start()
     settings = get_project_settings()

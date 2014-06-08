@@ -7,10 +7,10 @@ from storylist.models import Story
 from django.template import Context
  
 def index(request):
-    six_hours_ago = datetime.utcnow() - timedelta(hours=6)
-    stories = Story.objects.filter(added__gt=six_hours_ago).all()
+    past_week = datetime.now() - timedelta(days=7)
+    stories = Story.objects.filter(added__gt=past_week).all()
     context = Context({
-        'story_list': stories
+        'story_list': reversed(stories)
     })
 
     return render(request, '../templates/index.html', context)
