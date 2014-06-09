@@ -20,42 +20,61 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
+
+
+
+
+        <!-- HEADER -->
         <div>
             <header>
                 <h1 class="title">St. Louis Crimelog</h1>
             </header>
         </div>
 
-        <div class="main-container">
-            <div class="main wrapper clearfix">
+
+
+
+        <!-- STORY GRID -->
+        <div class="main">
+            <div class="grid">
 	            <!-- <aside>
 	                <h3>About</h3>
 	                    <p>St. Louis Crimelog is an automatic aggregator that compiles crime stories from the St. Louis meida.</p>
 	            </aside>
 	            -->
 				{% if story_list %}
-				    <ul>
+				<div class="row">
 				    {% for story in story_list %}
-				        <li>
-				        	<div id="story">
-					            <h3><a href="{{ story.url }}/">{{ story.headline }}</a></h3>
-					            <span><p>Source:<strong> {{ story.source }}</strong> - Added: {{ story.added}}</p></span>
-					        </div>
-				        </li>
+        				<div class="col-xs-12 col-md-4">
+				    		<div class="panel panel-default">
+  								<div class="panel-body">
+					            	<h3><a href="{{ story.url }}/">{{ story.headline }}</a></h3>
+					            	<p>Source:<strong> {{ story.source }}</strong> - Added: {{ story.added}}</p>
+					        	</div> <!-- panel-body -->
+					        </div> <!-- panel -->
+					    </div>
+							{% if forloop.counter|divisibleby:'3' %}
+								</div>
+								<div class="row">
+							{% endif %}
 				    {% endfor %}
-				    </ul>
 				{% else %}
 				    <p>No stories loaded.</p>
 				{% endif %}
+            </div> <!-- grid -->
+        </div> <!-- main -->
 
-            </div> <!-- #main -->
-        </div> <!-- #main-container -->
 
+
+
+        <!-- FOOTER -->
         <div class="footer-container">
             <footer class="wrapper">
                 <h3>footer</h3>
             </footer>
         </div>
+
+
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="/static/js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
