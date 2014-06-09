@@ -9,6 +9,8 @@ import sys
 sys.dont_write_bytecode = True
 
 class BND(Spider):
+    ignored = ['CRIME', 'TOP STORIES', 'EDUCATION', 'Neighborhood watch']
+
     name = "news-democrat"
     allowed_domains = ["bnd.com"]
     start_urls = ["http://www.bnd.com/crime-news/"]
@@ -24,11 +26,8 @@ class BND(Spider):
             item['source'] = "Belleville News-Democrat"
             item['added'] = datetime.now()
 
-            if item['headline'] == "CRIME":
-                pass
-            elif item['headline'] == "TOP STORIES":
-                pass
-            elif "Neighborhood watch" in item['headline']:
-                pass
-            else:
-                item.save()
+            for headline in ignored:
+                if item['headline'] == headline:
+                    pass
+                else:
+                    item.save()

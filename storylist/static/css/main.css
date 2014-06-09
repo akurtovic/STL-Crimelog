@@ -62,7 +62,13 @@ textarea {
    ========================================================================== */
 
 body {
-    font: 16px/26px Helvetica, Helvetica Neue, Arial;
+    font: 12px/22px Helvetica, Helvetica Neue, Arial;
+}
+
+.main #story {
+    margin: 10px auto 10px auto;
+    padding: 2px;
+    border: 1px double #000;
 }
 
 .wrapper {
@@ -248,7 +254,7 @@ nav a:hover {
 
     .main aside {
         float: right;
-        width: 28%;
+        width: 20%;
     }
 }
 
@@ -329,7 +335,7 @@ nav a:hover {
 /* ==========================================================================
    Print styles
    ========================================================================== */
-
+/
 @media print {
     * {
         background: transparent !important;
