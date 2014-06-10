@@ -20,6 +20,9 @@ class KMOV(Spider):
             item = Story()
             item['headline'] = sel.xpath('//h3[@class="entry-title"]/a/text()').extract()[story]
             item['url'] = sel.xpath('//h3/a[@class="storyLink"]/@href').extract()[story]
-            item['source'] = "KMOV"
-            item['added'] = datetime.now()
-            item.save()
+            if "http" not in item['url']:
+                pass
+            else:
+                item['source'] = "KMOV"
+                item['added'] = datetime.now()
+                item.save()
