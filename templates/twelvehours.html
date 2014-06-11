@@ -13,25 +13,8 @@
 
         <link rel="stylesheet" href="{% static "css/bootstrap-theme.min.css" %} ">
         <link rel="stylesheet" href="{% static "css/bootstrap.css" %} ">
-        <style>
-        	body { margin-left: 200px; margin-right: 200px; }
-        	@media (max-width: 980px) {
-    			body { margin-left: 20px; margin-right: 20px; }
-    		}
-			@media (max-width: 760px) {
-    			body { margin-left: 5px; margin-right: 5px; }
-    		}
-    	</style>
-
         <script src="{% static "js/bootstrap.js" %}"></script>
         <script src="{% static "js/jquery.js" %}"></script>
-
-        <script type ="text/javascript" src="{% static "js/bootstrap.js" %}"></script>
-		<script>
-     		$(document).ready(function(){
-        	$('.dropdown-toggle').dropdown()
-    		});
-		</script>
     </head>
 
 
@@ -39,6 +22,8 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+
+
 
         <!-- START HEADER -->
         <div class="page-header" id="banner">
@@ -53,17 +38,15 @@
 
 
         <!-- START NAV BAR -->
-        <ul id="tabs" class="nav nav-tabs" data-tabs="tabs" style="margin-bottom: 5px;">
+        <ul class="nav nav-tabs" style="margin-bottom: 5px;">
   			<li class="active"><a href="#home" data-toggle="tab">Home</a></li>
-  			<li><a data-toggle="tab" href="#filter">Filter</a></li>
+  			<li class=""><a href="#about" data-toggle="tab">About</a></li>
 		</ul>
 
 		<div id="myTabContent" class="tab-content">
-			<div class="tab-pane fade active in" id="home">
-	    		<p>STUFF GOES HERE</p>
-	  		</div>
-
-	  		<div class="tab-pane fade" id="filter">
+	  		<div class="tab-pane fade active in" id="home">
+	    		<p>STUFF GOES HERE
+	    		</p>
 	    		<div class="panel panel-primary">
   					<div class="panel-heading">
     					<h3 class="panel-title">Filter by Time</h3>
@@ -93,8 +76,15 @@
   						</div>
 				</div>
 	  		</div> <!-- END HOME TAB -->
+	  		<div class="tab-pane fade" id="about">
+	    		<p>MORE STUFF GOES HERE</p>
+	  		</div>
 		</div>
         <!-- END NAV BAR -->
+
+
+
+
 
 
         <!-- STORY GRID -->
@@ -147,10 +137,5 @@
             ga('create','UA-XXXXX-X');ga('send','pageview');
         </script>
         -->
-        <script type="text/javascript">
-    		jQuery(document).ready(function ($) {
-        		$('#tabs').tab();
-    		});
-		</script>  
     </body>
 </html>

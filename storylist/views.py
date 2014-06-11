@@ -25,3 +25,11 @@ def sixHours(request):
         'story_list': reversed(stories)
     })
     return render(request, '../templates/sixhours.html', context)
+
+def twelveHours(request):
+    past_twelve = datetime.now() - timedelta(hours=12)
+    stories = Story.objects.filter(added__gt=past_twelve).all()
+    context = Context({
+        'story_list': reversed(stories)
+    })
+    return render(request, '../templates/twelvehours.html', context)
