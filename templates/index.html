@@ -58,7 +58,9 @@
 
 		<div id="myTabContent" class="tab-content">
 			<div class="tab-pane fade active in" id="home">
-	    		<p>STUFF GOES HERE</p>
+	    		<p>St. Louis Crimeline is like Google News for local crime reporting. It automatically aggregates the latest crime news from local media and displays links to the stories in a responsive, mobile-friendly format.</p>
+				<p>Crimeline is built with open-source software and written in <a href="http://www.python.org">Python.</a> The stories are aggregated using the <a href="http://www.scrapy.org">Scrapy</a> screen scraping and web crawling framework, which feeds items into a <a href="http://www.sqlite.org/">SQLite</a> database and <a href="https://www.djangoproject.com/">Django-powered</a> website. The front-end is handled by Twitter’s <a href="http://getbootstrap.com/">Bootstrap</a> framework.</p>
+				<p>St. Louis Crimeline is an open-source project. The code that runs this website is available on Github.</p>
 	  		</div>
 
 	  		<div class="tab-pane fade" id="filter">
@@ -110,7 +112,7 @@
 	              <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i>{{ story.added}}</small></p>
 	            </div>
 	            <div class="timeline-body">
-	              <h3><a href="{{ story.url }}">{{ story.source }}</a></h3>
+	              <h5><a href="{{ story.url }}">{{ story.source }}</a></h5>
 	            </div>
 	          </div>
 	        </li>
@@ -120,29 +122,5 @@
 		<p>No stories loaded.</p>
 		{% endif %}
 
-
-        <!-- FOOTER -->
-        <div class="footer-container">
-            <footer class="wrapper">
-                <h3>footer</h3>
-            </footer>
-        </div>
-
-
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID.
-        <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='//www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X');ga('send','pageview');
-        </script>
-        -->
-        <script type="text/javascript">
-    		jQuery(document).ready(function ($) {
-        		$('#tabs').tab();
-    		});
-		</script>  
     </body>
 </html>
