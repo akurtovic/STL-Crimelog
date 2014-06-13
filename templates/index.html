@@ -14,7 +14,7 @@
         <link rel="stylesheet" href="{% static "css/bootstrap-theme.min.css" %} ">
         <link rel="stylesheet" href="{% static "css/bootstrap.css" %} ">
         <style>
-        	body { margin-left: 200px; margin-right: 200px; }
+        	body { margin-left: 150px; margin-right: 150px; }
         	@media (max-width: 980px) {
     			body { margin-left: 20px; margin-right: 20px; }
     		}
@@ -43,8 +43,8 @@
         <div class="page-header" id="banner">
         	<div class="row">
         		<div class="col-lg-6">
-                <h1 class="title">St. Louis Crimelog</h1>
-                <p class="lead">Tracking crime in St. Louis</p>
+                <h1 class="title">St. Louis Crimeline</h1>
+                <p class="lead">A timeline of crime news in St. Louis</p>
                 </div>
             </div>
         </div>
@@ -67,14 +67,12 @@
     					<h3 class="panel-title">Filter by Time</h3>
   					</div>
   					<div class="panel-body">
-  						<div class="row">
 	  						<a class="btn btn-primary" href="sixhours.html">6 Hours</a>
 	  						<a class="btn btn-primary" href="twelvehours.html">12 Hours</a>
 	  						<a class="btn btn-primary" href="day.html">1 Day</a>
 	  						<a class="btn btn-primary" href="week.html">1 Week</a>
 	  						<a class="btn btn-primary" href="month.html">1 Month</a>
 	  						<a class="btn btn-primary" href="all.html">All</a>
-  						</div>
   					</div>
 				</div>
 				<div class="panel panel-primary">
@@ -96,35 +94,31 @@
 
 
         <!-- STORY GRID -->
-        <div class="main">
-            <div class="grid">
-	            <!-- <aside>
-	                <h3>About</h3>
-	                    <p>St. Louis Crimelog is an automatic aggregator that compiles crime stories from the St. Louis meida.</p>
-	            </aside>
-	            -->
-				{% if story_list %}
-				<div class="row">
-				    {% for story in story_list %}
-        				<div class="col-xs-12 col-md-4">
-				    		<div class="panel panel-default">
-  								<div class="panel-body">
-					            	<h3><a href="{{ story.url }}">{{ story.headline }}</a></h3>
-					            	<p>Source:<strong> {{ story.source }}</strong> - Added: {{ story.added}}</p>
-					        	</div> <!-- panel-body -->
-					        </div> <!-- panel -->
-					    </div>
-							{% if forloop.counter|divisibleby:'3' %}
-								</div>
-								<div class="row">
-							{% endif %}
-				    {% endfor %}
-				{% else %}
-				    <p>No stories loaded.</p>
-				{% endif %}
-            </div> <!-- grid -->
-        </div> <!-- main -->
+        {% if story_list %}
+        <ul class="timeline">
 
+        {% for story in story_list %}
+			{% if forloop.counter|divisibleby:'2' %}
+				<li class="timeline-inverted">
+			{% else %}
+				<li class="timeline">
+			{% endif %}
+	          <div class="timeline-badge"><i class="glyphicon glyphicon-exclamation-sign"></i></div>
+	          <div class="timeline-panel">
+	            <div class="timeline-heading">
+	              <h4 class="timeline-title">{{ story.headline }}</h4>
+	              <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i>{{ story.added}}</small></p>
+	            </div>
+	            <div class="timeline-body">
+	              <h3><a href="{{ story.url }}">{{ story.source }}</a></h3>
+	            </div>
+	          </div>
+	        </li>
+        {% endfor %}
+   
+        {% else %}
+		<p>No stories loaded.</p>
+		{% endif %}
 
 
         <!-- FOOTER -->
