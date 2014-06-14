@@ -9,7 +9,7 @@ class Countdown(object):
     '''
     Timer for Reactor. Shuts down reactor.run() after 10 seconds
     '''
-    counter = 10
+    counter = 5
  
     def count(self):
         if self.counter == 0:
