@@ -4,10 +4,6 @@ from storylist import views
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'stlcrime.views.home', name='home'),
-    # url(r'^blog/', include('blog.urls')),
-
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', views.index, name='index'),
     url(r'^index', views.index, name='index'),
@@ -16,7 +12,6 @@ urlpatterns = patterns('',
     url(r'^day.html', views.day, name='day'),
     url(r'^week.html', views.week, name='week'),
     url(r'^month.html', views.month, name='month'),
-    url(r'^all.html', views.all, name='all'),
     url(r'^postdispatch.html', views.PD, name='pd'),
     url(r'^ksdk.html', views.KSDK, name='ksdk'),
     url(r'^kmov.html', views.KMOV, name='kmov'),

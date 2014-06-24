@@ -13,7 +13,7 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 
-TEMPLATE_PATH = os.path.join(BASE_DIR, 'templates/')
+TEMPLATE_PATH = '/home/amirkurtovic/crimeline/storylist'
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
@@ -55,9 +55,9 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'stlcrime.urls'
+ROOT_URLCONF = 'crimeline.urls'
 
-WSGI_APPLICATION = 'stlcrime.wsgi.application'
+WSGI_APPLICATION = 'crimeline.wsgi.application'
 
 
 # Database

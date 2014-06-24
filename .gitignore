@@ -11,3 +11,6 @@ stlcrime.sublime-project
 stlcrime.sublime-workspace
 storylist/views.pyc
 crimelog/crimelog/items.pyc
+crimeline/__init__.pyc
+crimeline/settings.pyc
+crimeline/urls.pyc

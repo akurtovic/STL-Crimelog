@@ -11,8 +11,8 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="stylesheet" href="{% static "css/bootstrap-theme.min.css" %} ">
-        <link rel="stylesheet" href="{% static "css/bootstrap.css" %} ">
+        <link rel="stylesheet" href="/static/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="/static/css/bootstrap.css">
         <style>
         	body { margin-left: 150px; margin-right: 150px; }
         	@media (max-width: 980px) {
@@ -81,7 +81,6 @@
 	  						<a class="btn btn-primary" href="day.html">1 Day</a>
 	  						<a class="btn btn-primary" href="week.html">1 Week</a>
 	  						<a class="btn btn-primary" href="month.html">1 Month</a>
-	  						<a class="btn btn-primary" href="all.html">All</a>
   					</div>
 				</div>
 				<div class="panel panel-primary">
@@ -94,7 +93,7 @@
 	  						<a class="btn btn-primary" href="kmov.html">KMOV</a>
 	  						<a class="btn btn-primary" href="rft.html">Riverfront Times</a>
 	  						<a class="btn btn-primary" href="kmox.html">KMOX</a>
-	  						<a class="btn btn-info" href="">Belleville News-Democrat</a>
+	  						<a class="btn btn-primary" href="bnd.html">Belleville News-Democrat</a>
   						</div>
 				</div>
 	  		</div> <!-- END HOME TAB -->
@@ -124,7 +123,7 @@
 	          </div>
 	        </li>
         {% endfor %}
-   
+
         {% else %}
 		<p>No stories loaded.</p>
 		{% endif %}

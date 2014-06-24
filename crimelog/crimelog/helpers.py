@@ -5,10 +5,10 @@ dupCheck():		Delete duplicate entries.
 
 """
 import sys
-sys.path.insert(0, '/Users/amir/Documents/stlcrime/')
+sys.path.insert(0, '/home/amirkurtovic/crimeline')
 
 import os
-os.environ['DJANGO_SETTINGS_MODULE'] = 'stlcrime.settings'
+os.environ['DJANGO_SETTINGS_MODULE'] = 'crimeline.settings'
 
 
 from storylist.models import Story

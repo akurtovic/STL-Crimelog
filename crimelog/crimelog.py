@@ -7,10 +7,10 @@ from crimelog.helpers import dupCheck
 
 class Countdown(object):
     '''
-    Timer for Reactor. Shuts down reactor.run() after 10 seconds
+    Timer for Reactor. Shuts down reactor.run() after 20 seconds
     '''
-    counter = 5
- 
+    counter = 20
+
     def count(self):
         if self.counter == 0:
             reactor.stop()
@@ -18,7 +18,7 @@ class Countdown(object):
             print self.counter, '...'
             self.counter -= 1
             reactor.callLater(1, self.count)
- 
+
 
 def setup_crawler(spider_name):
     crawler = Crawler(settings)
@@ -27,7 +27,7 @@ def setup_crawler(spider_name):
     crawler.crawl(spider)
     crawler.start()
 
-if __name__ == "__main__": 
+if __name__ == "__main__":
     log.start()
     settings = get_project_settings()
     crawler = Crawler(settings)
