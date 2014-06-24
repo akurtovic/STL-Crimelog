@@ -5,3 +5,5 @@ St. Louis Crimeline automatically aggregates the latest crime news from local ne
 
 Crimeline is built with Scrapy, Django, and Twitter’s Bootstrap framework.
 
+Here is a <a href="http://amirkurtovic.pythonanywhere.com">live version of this website.</a>
+
