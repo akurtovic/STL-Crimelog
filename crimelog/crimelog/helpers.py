@@ -10,7 +10,6 @@ sys.path.insert(0, '/home/amirkurtovic/crimeline')
 import os
 os.environ['DJANGO_SETTINGS_MODULE'] = 'crimeline.settings'
 
-
 from storylist.models import Story
 from scrapy.contrib.djangoitem import DjangoItem
 

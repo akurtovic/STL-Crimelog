@@ -13,6 +13,7 @@ sys.path.insert(0, '/home/amirkurtovic/crimeline')
 import os
 os.environ['DJANGO_SETTINGS_MODULE'] = 'crimeline.settings'
 
+
 sys.dont_write_bytecode = True
 
 BOT_NAME = 'crimelog'
