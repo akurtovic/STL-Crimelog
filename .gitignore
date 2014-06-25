@@ -14,3 +14,4 @@ crimelog/crimelog/items.pyc
 crimeline/__init__.pyc
 crimeline/settings.pyc
 crimeline/urls.pyc
+crimeline/wsgi.pyc
