@@ -12,22 +12,20 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="stylesheet" href="/static/css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="/static/css/bootstrap.css">
-        <style>
-        	body { margin-left: 150px; margin-right: 150px; }
-        	@media (max-width: 980px) {
-    			body { margin-left: 20px; margin-right: 20px; }
-    		}
-			@media (max-width: 760px) {
-    			body { margin-left: 5px; margin-right: 5px; }
-    		}
-    	</style>
+        <!-- STYLE SHEETS -->
+        <link rel="stylesheet" href="{% static "css/bootstrap-theme.min.css" %}">
+        <link rel="stylesheet" href="{% static "css/bootstrap.css" %}">
+        <link rel="stylesheet" href="{% static "css/custom.css" %}">
 
-        <script src="{% static "js/bootstrap.js" %}"></script>
+        <!-- SCRIPTS -->
         <script src="{% static "js/jquery.js" %}"></script>
-
         <script type ="text/javascript" src="{% static "js/bootstrap.js" %}"></script>
+
+        <!-- FONTS -->
+        <link href='http://fonts.googleapis.com/css?family=Merriweather' rel='stylesheet' type='text/css'>
+        <link href="http://fonts.googleapis.com/css?family=Nobile" rel="stylesheet" type="text/css">
+
+    <!-- BOOTSTRAP TAB SCRIPT -->
 		<script>
      		$(document).ready(function(){
         	$('.dropdown-toggle').dropdown()
@@ -44,10 +42,9 @@
         <div class="page-header" id="banner">
         	<div class="row">
         		<div class="col-lg-6">
-                <h1 class="title">STL Crimeline</h1>
-                <p class="lead">A timeline of crime news in St. Louis</p>
-                </div>
+                <img src="{% static "img/logo.png" %}" alt="STL Crimeline">
             </div>
+          </div>
         </div>
         <!-- END HEADER -->
 

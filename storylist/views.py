@@ -63,27 +63,13 @@ def month(request):
     })
     return render(request, './templates/month.html', context)
 
-<<<<<<< HEAD
-=======
-def all(request):
-    stories = Story.objects.all()
-    context = Context({
-        'story_list': reversed(stories)
-    })
-    return render(request, './templates/all.html', context)
-
->>>>>>> 00e3bead81afc4389d75c2248683e1356e31e443
 def PD(request):
 	stories = Story.objects.filter(source="Post-Dispatch").all()
 	context = Context ({
 		'story_list': reversed(stories)
 		})
-<<<<<<< HEAD
 
-	return render(request, 'templates/postdispatch.html', context)
-=======
 	return render(request, './templates/postdispatch.html', context)
->>>>>>> 00e3bead81afc4389d75c2248683e1356e31e443
 
 
 def KSDK(request):
@@ -91,12 +77,8 @@ def KSDK(request):
 	context = Context ({
 		'story_list': reversed(stories)
 		})
-<<<<<<< HEAD
-
-	return render(request, 'templates/ksdk.html', context)
-=======
 	return render(request, './templates/ksdk.html', context)
->>>>>>> 00e3bead81afc4389d75c2248683e1356e31e443
+
 
 
 def KMOV(request):
@@ -104,12 +86,8 @@ def KMOV(request):
 	context = Context ({
 		'story_list': reversed(stories)
 		})
-<<<<<<< HEAD
-
-	return render(request, 'templates/kmov.html', context)
-=======
 	return render(request, './templates/kmov.html', context)
->>>>>>> 00e3bead81afc4389d75c2248683e1356e31e443
+
 
 
 def RFT(request):
@@ -117,25 +95,15 @@ def RFT(request):
 	context = Context ({
 		'story_list': reversed(stories)
 		})
-<<<<<<< HEAD
-
-	return render(request, 'templates/rft.html', context)
-=======
 	return render(request, './templates/rft.html', context)
->>>>>>> 00e3bead81afc4389d75c2248683e1356e31e443
-
 
 def KMOX(request):
 	stories = Story.objects.filter(source="KMOX").all()
 	context = Context ({
 		'story_list': reversed(stories)
 		})
-<<<<<<< HEAD
-
-	return render(request, 'templates/kmox.html', context)
-=======
 	return render(request, './templates/kmox.html', context)
->>>>>>> 00e3bead81afc4389d75c2248683e1356e31e443
+
 
 
 def BND(request):
@@ -143,10 +111,4 @@ def BND(request):
 	context = Context ({
 		'story_list': reversed(stories)
 		})
-<<<<<<< HEAD
-	return render(request, 'templates/bnd.html', context)
-
-
-=======
 	return render(request, './templates/bnd.html', context)
->>>>>>> 00e3bead81afc4389d75c2248683e1356e31e443

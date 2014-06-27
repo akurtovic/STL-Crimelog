@@ -5921,7 +5921,7 @@ table .info a,
         position: absolute;
         content: " ";
         width: 3px;
-        background-color: #eeeeee;
+        background-color: #3399FF;
         left: 50%;
         margin-left: -1.5px;
     }
@@ -5954,6 +5954,7 @@ table .info a,
         .timeline > li > .timeline-panel {
             width: 46%;
             float: left;
+            background: url(/static/img/crossword.png) repeat 0 0;
             border: 1px solid #d4d4d4;
             border-radius: 2px;
             padding: 10px;

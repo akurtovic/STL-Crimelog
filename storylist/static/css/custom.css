@@ -1,0 +1,15 @@
+body { 
+	margin-left: 150px; margin-right: 150px;
+}
+@media (max-width: 980px) {
+    body { margin-left: 20px; margin-right: 20px; }
+    }
+@media (max-width: 760px) {
+body { margin-left: 5px; margin-right: 5px; }
+	}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Merriweather', serif;
+}
+p, div {
+    font-family: 'Nobile', Helvetica, Arial, sans-serif;
+}
