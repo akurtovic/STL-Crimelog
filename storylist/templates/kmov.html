@@ -34,6 +34,8 @@
     </head>
 
     <body>
+    <div id="wrap">
+      <div id="main" class="container clear-top">
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -136,6 +138,15 @@
         {% else %}
 		<p>No stories loaded.</p>
 		{% endif %}
+    
+      </div> <!-- CLOSE DIV ID=MAIN" -->
+    </div> <!-- CLOSE DIV ID="WRAP" -->
+
+    <footer class="footer">
+      <div id="builtinstl">
+        <img src="{% static "img/builtinstl.jpg" %}">
+      </div>
+    </footer>
 
     </body>
 </html>
