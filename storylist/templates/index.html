@@ -22,8 +22,8 @@
         <script type ="text/javascript" src="{% static "js/bootstrap.js" %}"></script>
 
         <!-- FONTS -->
-        <link href='http://fonts.googleapis.com/css?family=Merriweather' rel='stylesheet' type='text/css'>
-        <link href="http://fonts.googleapis.com/css?family=Nobile" rel="stylesheet" type="text/css">
+        <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:700' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css'>
 
     <!-- BOOTSTRAP TAB SCRIPT -->
 		<script>
@@ -50,25 +50,29 @@
 
         <!-- START NAV BAR -->
         <ul id="tabs" class="nav nav-tabs" data-tabs="tabs" style="margin-bottom: 5px;">
-  			<li class="active"><a href="#filter" data-toggle="tab">Filter</a></li>
+        <li class="active"><a href="#home" data-toggle="tab">Headlines</a></li>
+  			<li><a href="#filter" data-toggle="tab">Filter</a></li>
   			<li><a data-toggle="tab" href="#about">About</a></li>
 		</ul>
 
 		<div id="myTabContent" class="tab-content">
+      <div class="tab-pane fade active in" id="home">
+      </div>
+
 			<div class="tab-pane fade" id="about">
 				<div class="panel panel-primary">
   					<div class="panel-heading">
     					<h3 class="panel-title">About St. Louis Crimeline</h3>
   					</div>
   					<div class="panel-body">
-  						<p>St. Louis Crimeline is like Google News for local crime reporting. It automatically aggregates the latest crime news from local media and displays links to the stories in a responsive, mobile-friendly format.</p>
+  						<p>St. Louis Crimeline automatically aggregates the latest crime news from local media and displays links to the stories in a responsive, mobile-friendly format.</p>
 						<p>Crimeline is built with 100% open-source software. The back-end is written in <a href="http://www.python.org">Python.</a> The stories are aggregated using the <a href="http://www.scrapy.org">Scrapy</a> screen scraping and web crawling framework, which feeds items into a <a href="http://www.sqlite.org/">SQLite</a> database and <a href="https://www.djangoproject.com/">Django-powered</a> website. The front-end is handled by Twitter’s <a href="http://getbootstrap.com/">Bootstrap</a> framework.</p>
 						<p>St. Louis Crimeline is an open-source project. The code that runs this website is available on <a href="https://github.com/akurtovic/STL-Crimelog/">Github.</p></a>
   					</div>
 				</div>
 	  		</div>
 
-	  		<div class="tab-pane fade active in" id="filter">
+	  		<div class="tab-pane fade" id="filter">
 	    		<div class="panel panel-primary">
   					<div class="panel-heading">
     					<h3 class="panel-title">Filter by Time</h3>
@@ -104,7 +108,7 @@
         <ul class="timeline">
 
         {% for story in story_list %}
-			{% if forloop.counter|divisibleby:'2' %}
+			  {% if forloop.counter|divisibleby:'2' %}
 				<li class="timeline-inverted">
 			{% else %}
 				<li class="timeline">
