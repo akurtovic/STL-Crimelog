@@ -9,15 +9,31 @@ from django.template import Context
 def index(request):
 	"""
 	Main Index View:
-	Displays all stories crawled in the past week
+	Displays all stories crawled in the past 24 hours
 	"""
 	past24 = datetime.now() - timedelta(days=1)
 	stories = Story.objects.filter(added__gt=past24).all()
+	count = len(stories)
 	context = Context({
-		'story_list': reversed(stories)
+		'story_list': reversed(stories),
+		'story_count': count
 	})
 	return render(request, './templates/index.html', context)
 
+def filter(request, time, pub):
+	"""
+	Filter view: NOT IMPLEMENTED YET
+	"""
+	offset = datetime.now() - timedelta(hours=time)
+
+	# Needs conditional in case user selects "all" sources
+	stories = Story.objects.filter(added__gt=offset, source=pub)
+
+	count = len(stories)
+	context = Context({
+		'story_list': reversed(stories),
+		'story_count': count
+		})
 
 def sixHours(request):
     past_six = datetime.now() - timedelta(hours=6)
@@ -26,7 +42,6 @@ def sixHours(request):
         'story_list': reversed(stories)
     })
     return render(request, './templates/sixhours.html', context)
-
 
 def twelveHours(request):
     past_twelve = datetime.now() - timedelta(hours=12)
