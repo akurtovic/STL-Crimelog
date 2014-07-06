@@ -8,7 +8,7 @@
 import sys
 import imp, os
 
-sys.path.insert(0, '/home/amirkurtovic/crimeline')
+sys.path.insert(0, '/home/amirkurtovic/STL-Crimelog')
 
 import os
 os.environ['DJANGO_SETTINGS_MODULE'] = 'crimeline.settings'
