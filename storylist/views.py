@@ -20,20 +20,40 @@ def index(request):
 	})
 	return render(request, './templates/index.html', context)
 
-def filter(request, time, pub):
+def filter_view(request):
 	"""
 	Filter view: NOT IMPLEMENTED YET
 	"""
-	offset = datetime.now() - timedelta(hours=time)
+	source_specified = False
+
+	if (request.GET.get('time')):
+		hours_filter = request.GET.get('time')
+	else:
+		hours_filter = 24
+
+	if (request.GET.get('source')):
+		source_filter = request.GET.get('source')
+
+		if(source_filter=="all"):
+			source_specified = False
+		else:
+			source_specified = True
+
+
+	offset = datetime.now() - timedelta(hours=int(hours_filter))
 
 	# Needs conditional in case user selects "all" sources
-	stories = Story.objects.filter(added__gt=offset, source=pub)
+	if (source_specified):
+		stories = Story.objects.filter(added__gt=offset, source=source_filter).all()
+	else:
+		stories = Story.objects.filter(added__gt=offset).all()
 
 	count = len(stories)
 	context = Context({
 		'story_list': reversed(stories),
 		'story_count': count
 		})
+	return render(request, './templates/filter.html', context)
 
 def sixHours(request):
     past_six = datetime.now() - timedelta(hours=6)
