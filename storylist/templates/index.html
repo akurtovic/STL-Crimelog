@@ -75,30 +75,87 @@
 	  		</div>
 
 	  		<div class="tab-pane fade" id="filter">
-          <form action="http://127.0.0.1:8000/filter.html">
-            <p class="timefilter">Filter by time:
-              <input type="radio" name="time" value="3" />3 Hours
-              <input type="radio" name="time" value="6" />6 Hours
-              <input type="radio" name="time" value="12" />12 Hours
-              <input type="radio" name="time" value="24" checked="checked"/>24 Hours
-              <input type="radio" name="time" value="168" />1 Week
-              <input type="radio" name="time" value="720" />1 Month
-            </p>
+            <form class="form" action="filter.html">
 
-            <p class="sourcefilter">Filter by source:
-              <input type="radio" name="source" value="all" checked="checked" />All
-              <input type="radio" name="source" value="Post-Dispatch" />Post-Dispatch
-              <input type="radio" name="source" value="KSDK" />KSDK
-              <input type="radio" name="source" value="KMOV" />KMOV
-              <input type="radio" name="source" value="KMOX" />KMOX
-              <input type="radio" name="source" value="Belleville News-Democrat" />Belleville News-Democrat
-              <input type="radio" name="source" value="Riverfront Times" />Riverfront Times
-            </p>
-            <input type="submit" value="Filter" />
+            <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h4 class="panel-title">Filter by Time</h4>
+            </div>
+            <div class="panel-body">
+              <div class="control-group">
+                <div class="controls">
+                  <label class="col-md-4 control-label">
+                    <input name="time" value="3" type="radio">
+                    3 hours
+                  </label>
+                  <label class="col-md-4 control-label">
+                    <input name="time" value="6" type="radio">
+                    6 hours
+                  </label>
+                  <label class="col-md-4 control-label">
+                    <input name="time" value="12" type="radio">
+                    12 hours
+                  </label>
+                  <label class="col-md-4 control-label">
+                    <input name="time" value="24" checked="checked" type="radio">
+                    24 hours
+                  </label>
+                  <label class="col-md-4 control-label">
+                    <input name="time" value="168" type="radio">
+                    1 Week
+                  </label>
+                  <label class="col-md-4 control-label">
+                    <input name="time" value="720" type="radio">
+                    1 Month
+                  </label>
+                </div>
+              </div>
+              </div></div> <!-- Close panel divs -->
+
+              <!-- Multiple Radios (inline) -->
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                <h4 class="panel-title">Filter by Source</h4>
+              </div>
+              <div class="panel-body">
+              <div class="control-group">
+                <div class="controls">
+                  <label class="col-md-4 control-label">
+                    <input name="source" value="all" checked="checked" type="radio">
+                    All
+                  </label>
+                  <label class="col-md-4 control-label">
+                    <input name="source" value="Post-Dispatch" type="radio">
+                    Post-Dispatch
+                  </label>
+                  <label class="col-md-4 control-label">
+                    <input name="source" value="KSDK" type="radio">
+                    KSDK
+                  </label>
+                  <label class="col-md-4 control-label">
+                    <input name="source" value="KMOV" type="radio">
+                    KMOV
+                  </label>
+                  <label class="col-md-4 control-label">
+                    <input name="source" value="KMOX" type="radio">
+                    KMOX
+                  </label>
+                  <label class="col-md-4 control-label">
+                    <input name="source" value="Belleville News-Democrat" type="radio">
+                    Belleville News-Democrat
+                  </label>
+                  <label class="col-md-4 control-label">
+                    <input name="source" value="Riverfront Times" type="radio">
+                    Riverfront Times
+                  </label>
+                </div>
+              </div>
+              </div></div><!-- Close filter panel divs -->
+            <button type="submit" class="btn btn-primary">Filter</button>
           </form>
 
-	  		</div> <!-- END HOME TAB -->
-		</div> <!-- END NAV BAR -->
+	  		 </div> <!-- END HOME TAB -->
+		    </div> <!-- END NAV BAR -->
 
         <!-- STORY GRID -->
         <p class="storycount">{{ story_count }} stories found.</p> <!-- Story count -->

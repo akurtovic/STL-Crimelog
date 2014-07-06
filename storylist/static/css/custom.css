@@ -1,5 +1,5 @@
 body { 
-	margin-left: 150px; margin-right: 150px;
+	margin-left: 50px; margin-right: 50px;
 }
 @media (max-width: 980px) {
     body { margin-left: 20px; margin-right: 20px; }
