@@ -49,3 +49,7 @@ html, body {
     height: 150px;
     padding-bottom: 5px;
 }
+
+#headlineLink {
+  text-decoration: none;
+}

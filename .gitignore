@@ -1,4 +1,4 @@
 db.sqlite3
 *.pyc
-stlcrime.sublime-workspace
-*.sublime-workspace
+*sublime-workspace
+*sublime-project
