@@ -22,7 +22,7 @@ SPIDER_MODULES = ['crimelog.spiders']
 NEWSPIDER_MODULE = 'crimelog.spiders'
 ITEM_PIPELINES = {
     #'crimelog.pipelines.JsonWriterPipeline':300,
-    'crimelog.pipelines.CrimelogDuplicates':100,
+    #'crimelog.pipelines.CrimelogDuplicates':100,
     }
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
