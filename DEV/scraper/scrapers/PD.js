@@ -11,7 +11,7 @@ var getPostDispatchArticles = function () {
 			$('.bull-list li a').each(function(i, element){
 				title = $(this).text();
 				link = "http://www.stltoday.com" + $(this).attr('href');
-				saveArticle(title, link, "St. Louis Post Dispatch" );
+				saveArticle(title, link, "St. Louis Post-Dispatch" );
 			});
 		}
 	});
